@@ -1,4 +1,4 @@
-from pbt import SETTINGS
+from ppt import SETTINGS
 from tests.test_pbt import PbtTest
 
 

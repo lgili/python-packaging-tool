@@ -1,12 +1,12 @@
-from pbt.resources import copy_with_filtering
+from ppt.resources import copy_with_filtering
 from os.path import join, dirname
 from tempfile import TemporaryDirectory
 from unittest import TestCase
 
-import pbt
-import pbt.builtin_commands
-import pbt._state as pbt_state
-from pbt import platform
+import ppt
+import ppt.builtin_commands
+import ppt._state as pbt_state
+from ppt import platform
 import json
 
 
@@ -17,7 +17,7 @@ class PbtTest(TestCase):
         self._tmp_dir = TemporaryDirectory()
         self._project_dir = join(self._tmp_dir.name, "project")
         project_template = join(
-            dirname(pbt.builtin_commands.__file__), "project_template"
+            dirname(ppt.builtin_commands.__file__), "project_template"
         )
         replacements = {"python_bindings": "PyQt5"}
         copy_with_filtering(
@@ -29,14 +29,14 @@ class PbtTest(TestCase):
             ],
         )
         self._update_settings("base.json", {"app_name": "MyApp"})
-        # Save pbt's state:
+        # Save ppt's state:
         self._state_before = pbt_state.get()
         self._platform_before = platform.get()
 
     def init_pbt(self, platform_name=None):
         if platform_name is not None:
             platform.restore(platform_name, None, None)
-        pbt.init(self._project_dir)
+        ppt.init(self._project_dir)
 
     def tearDown(self):
         platform.restore(*self._platform_before)

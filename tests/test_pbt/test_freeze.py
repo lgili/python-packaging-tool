@@ -1,5 +1,5 @@
-from pbt.paths import project_path
-from pbt.freeze import _generate_resources
+from ppt.paths import project_path
+from ppt.freeze import _generate_resources
 from os.path import exists
 from tests.test_pbt import PbtTest
 

@@ -1,6 +1,6 @@
-from pbt.paths import project_path
-from pbt.builtin_commands import freeze, installer
-from pbt.platform import is_mac, is_windows, is_linux
+from ppt.paths import project_path
+from ppt.builtin_commands import freeze, installer
+from ppt.platform import is_mac, is_windows, is_linux
 from os import listdir
 from os.path import exists, join
 from tests.test_pbt import PbtTest

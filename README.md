@@ -1,4 +1,4 @@
-# python-built-tool
+# python-packaging-tool
 
 ## What is it?
 
@@ -43,9 +43,9 @@ FBS had all the functionality that we wanted but there were a number of things w
 2) Download the source code from github and extract it to your computer
 3) Optionally set up a virtual environment and enable it
 4) Run `python -m pip install <path>` replacing `<path>` with the path to the directory extracted in step 2. On linux and mac use `python3` instead
-5) Run `pbt startproject` to create a new project. This will prompt you for some inputs and then will create a hello world package, packaging files and build_system directory.
-6) You can then run `pbt run` to execute the package. You can also execute the package like you normally would with a python package.
-7) Run `pbt freeze` which will call PyInstaller and generate a packaged executable for your application in `target`. Try running it to make sure it works.
-8) Run `pbt installer` to create an installer for your application that you can distribute.
+5) Run `ppt startproject` to create a new project. This will prompt you for some inputs and then will create a hello world package, packaging files and build_system directory.
+6) You can then run `ppt run` to execute the package. You can also execute the package like you normally would with a python package.
+7) Run `ppt freeze` which will call PyInstaller and generate a packaged executable for your application in `target`. Try running it to make sure it works.
+8) Run `ppt installer` to create an installer for your application that you can distribute.
 
 More detailed information can be found in the [FBS tutorial](https://github.com/mherrmann/fbs-tutorial)

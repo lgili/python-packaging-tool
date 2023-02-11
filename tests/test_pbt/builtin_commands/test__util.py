@@ -1,4 +1,4 @@
-from pbt.builtin_commands._util import _update_json_str
+from ppt.builtin_commands._util import _update_json_str
 from unittest import TestCase
 
 
