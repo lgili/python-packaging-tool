@@ -6,6 +6,7 @@ from ppt.paths import default_path, project_path, get_script_path
 from os import rename
 from pathlib import PurePath
 from subprocess import run
+from os.path import join, dirname
 
 
 def run_pyinstaller(extra_args=None, debug=False):
@@ -47,7 +48,8 @@ def run_pyinstaller(extra_args=None, debug=False):
             args.append("-w")
     args.append(get_script_path()[0])
     run(args, check=True)
-    output_dir = project_path("target/" + app_name + (".app" if is_mac() else ""))
+    output_dir = project_path(
+        "target/" + app_name + (".app" if is_mac() else ""))
     freeze_dir = project_path("${freeze_dir}")
     # In most cases, rename(src, dst) silently "works" when src == dst. But on
     # some Windows drives, it raises a FileExistsError. So check src != dst:
@@ -64,7 +66,12 @@ def _generate_resources():
     corresponding setting in files on that list.
     """
     freeze_dir = project_path("${freeze_dir}")
+    if is_mac():
+        resources_dest_dir = join(freeze_dir, 'Contents', 'Resources')
+    else:
+        resources_dest_dir = freeze_dir
     for path_fn in default_path, project_path:
         for profile in LOADED_PROFILES:
-            _copy(path_fn, 'build_system/resources/' + profile, freeze_dir)
+            _copy(path_fn, '${build_system_dir}/resources/',
+                  resources_dest_dir)
             _copy(path_fn, "${build_system_dir}/freeze/" + profile, freeze_dir)
