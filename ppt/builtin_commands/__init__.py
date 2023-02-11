@@ -49,7 +49,7 @@ _LOG = logging.getLogger(__name__)
 
 
 @command
-def startproject():
+def init():
     """
     Start a new project in the current directory
     """

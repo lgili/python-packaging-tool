@@ -41,7 +41,7 @@ def require_existing_project():
         raise PbtError(
             f"Could not find {get_build_system_dir()} directory. Are you in the right folder?\n"
             "If yes, did you already run\n"
-            "    ppt startproject ?"
+            "    ppt init ?"
         )
 
 
