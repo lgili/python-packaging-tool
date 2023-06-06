@@ -42,10 +42,10 @@ def run_pyinstaller(extra_args=None, debug=False):
         ]
     )
     # It's a Python 3.10 compatibility issue, and it's mentioned https://github.com/pyinstaller/pyinstaller/issues/5693
-    #version = sys.version_info
-    #if version[0] == 3 and version[1] == 10:
-    #    print("removing _bootlocale from build")
-    #    args.extend(["--exclude-module", "_bootlocale"])
+    version = sys.version_info
+    if version[0] == 3 and version[1] >= 10:
+        print("removing _bootlocale from build")
+        args.extend(["--exclude-module", "_bootlocale"])
     if debug:
         args.extend(["--debug", "all"])
         if is_mac():
