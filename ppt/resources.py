@@ -54,8 +54,9 @@ def get_icons():
     result = {}
     for profile in LOADED_PROFILES:
         icons_dir = f"${{build_system_dir}}/icons/{profile}"
-        for icon_path in glob(project_path(icons_dir + "/*.png")):
+        for icon_path in glob(project_path(icons_dir + "/*.ico")):
             name = splitext(basename(icon_path))[0]
+            print(name)
             match = re.match("(\d+)(?:@(\d+)x)?", name)
             if not match:
                 raise PbtError("Invalid icon name: " + icon_path)

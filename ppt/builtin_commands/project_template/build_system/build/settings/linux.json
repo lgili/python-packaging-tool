@@ -2,5 +2,10 @@
     "categories": "Utility;",
     "description": "",
     "author_email": "",
-    "url": ""
+    "url": "",
+    "depends": [],
+    "files_to_filter": [
+        "@{build_system_dir}/installer/linux/usr/share/applications/AppName.desktop"
+    ],
+    "public_settings": ["categories", "description", "author_email", "url"]
 }

@@ -207,9 +207,11 @@ def installer():
     )
     try:
         installer_fname = SETTINGS["installer"]
+        print(f'system to generate installer {installer_fname}')
     except KeyError:
         if is_linux():
-            raise PbtError(linux_distribution_not_supported_msg)
+            # raise PbtError(linux_distribution_not_supported_msg)
+            print("error to find system. You shoult put a valid platform to settings. Like this \"installer: \"ubuntu\" \"")
         raise
     out_file = join("target", installer_fname)
     msg_parts = ["Created %s." % out_file]
@@ -223,6 +225,7 @@ def installer():
         create_installer_mac()
     elif is_linux():
         app_name = SETTINGS["app_name"]
+        
         if is_ubuntu():
             from ppt.installer.ubuntu import create_installer_ubuntu
 

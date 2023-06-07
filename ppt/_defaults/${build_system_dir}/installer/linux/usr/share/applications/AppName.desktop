@@ -5,5 +5,5 @@ Exec=/opt/${app_name}/${app_name}
 Terminal=false
 NoDisplay=false
 Categories=${categories}
-Version=1.2
+Version=${version}
 Icon=${app_name}

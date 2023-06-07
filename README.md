@@ -49,3 +49,10 @@ FBS had all the functionality that we wanted but there were a number of things w
 8) Run `ppt installer` to create an installer for your application that you can distribute.
 
 More detailed information can be found in the [FBS tutorial](https://github.com/mherrmann/fbs-tutorial)
+
+## Dependecies
+install python dev from your version like
+`sudo apt-get install python3.11-dev`
+to build on linux *deb
+`apt-get install squashfs-tools`
+`gem install fpm`
