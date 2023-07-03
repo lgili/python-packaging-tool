@@ -4,3 +4,8 @@ requires = [
     "wheel"
 ]
 build-backend = "setuptools.build_meta"
+
+[ppt]
+dependencies = [
+    'PyInstaller @ git+https://github.com/lgili/pyinstaller.git',
+]
